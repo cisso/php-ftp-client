@@ -64,7 +64,7 @@ class FtpClient implements Countable
      *
      * @var Functions
      */
-    private $ftp;
+    protected $ftp;
 
     /**
      * Constructor.
