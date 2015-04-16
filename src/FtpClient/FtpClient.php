@@ -294,7 +294,7 @@ class FtpClient implements Countable
         // utils for recursion
         $flatten = function (array $arr) use (&$flatten) {
 
-            $flat = [];
+            $flat = array();
 
             foreach ($arr as $k => $v) {
                 if (is_array($v)) {
@@ -752,7 +752,7 @@ class FtpClient implements Countable
                 continue;
             }
 
-            $item = [
+            $item = array(
                 'permissions' => $chunks[0],
                 'number'      => $chunks[1],
                 'owner'       => $chunks[2],
@@ -763,7 +763,7 @@ class FtpClient implements Countable
                 'time'        => $chunks[7],
                 'name'        => $chunks[8],
                 'type'        => $this->rawToType($chunks[0]),
-            ];
+            );
 
             if ($item['type'] == 'link') {
                 $item['target'] = $chunks[10]; // 9 is "->"
